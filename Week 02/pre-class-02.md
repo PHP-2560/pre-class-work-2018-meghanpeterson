@@ -12,7 +12,7 @@ The R function ***rexp()*** generates random variables with an exponential distr
 <center><strong>rexp(n=10, rate=5)</strong> </center>
 
 results in 10 exponentially distributed numbers with a rate \(\lambda=5\). If you leave out the 5 and just have
-<center><strong>rexp(n=10) </strong></center>
+<center><strorexp(n=10) </strong></center>
 then this results in 10 exponentially distributed numbers with a rate \(\lambda=1\), this is also referred to as the "standard exponential distribution". 
 
 ### Part 1
@@ -43,8 +43,22 @@ plot(exp.draws.0.2, exp.draws.5)
 
 4. We'd now like to compare the properties of each of our vectors. Begin by creating a vector of the means of each of our five distributions in the order we created them and saving this to a variable name of your choice. Using this and other similar vectors, create the following scatterplots and explain in words what is going on:
     a. The five means versus the five rates used to generate the distribution.
+
+vec.1 <- c(mean(exp.draws.1), mean(exp.draws.0.2), mean(exp.draws.5), mean(exp.draws.7.3), mean(exp.draws.10))
+ratevec.1 <- c(lambda=1, 0.2, 5, 7.3, 10) 
+In the plot in which x= the five means and y= the five rates the data shows an association in which the data is right-skewed and shows a negative association. 
+
+
     b. The standard deviations versus the rates.
+
+sdvec.1 <- c(sd(exp.draws.1), sd(exp.draws.0.2), sd(exp.draws.5), sd(exp.draws.7.3), sd(exp.draws.10))
+
+For the plot in which x= the five standard deviations and y= the five rates, the plot looks the same as the the plot comparing the means with the rates. It is a negative association that is right-skewed. 
+
     c. The means versus the standard deviations.
+    
+plot(vec.1, sdvec.1)
+For the plot in which x= the means of the data and y= the standard deviations of the data the plot shows an outlier at 5 and the results are condensed toward the left of the graph. 
 
 For each plot, explain in words what's going on.
 
