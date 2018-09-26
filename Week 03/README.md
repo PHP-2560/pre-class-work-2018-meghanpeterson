@@ -15,4 +15,8 @@ This folder contains your first pre-class assignment. Remember to complete the f
 
 
 
+<<<<<<< HEAD
 Then proceed to the Pre Week 03 RMarkdown file, complete this and commit your work often to begin to learn how to make small changes and committing. 
+=======
+Then proceed to the Pre Week 03 RMarkdown file, complete this and commit your work often to begin to learn how to make small changes and committing. 
+>>>>>>> 1d182ebf22eeba013f97a6f3210b2a88eb1f2586
