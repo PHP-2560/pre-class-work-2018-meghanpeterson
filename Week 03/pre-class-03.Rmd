@@ -36,6 +36,13 @@ summarise(countriespercontinent = n_distinct(country))
 <b> There are 52 countries in Africa, 25 countries in the Americas, 33 countries in Asia, 30 countries in Europe, and 2 countries in Oceania. </b>
 
 2. Which European nation had the lowest GDP per capita in 1997? 
+
+```{r}
+gapminder %>%
+filter(continent == 'Europe') %>%
+arrange(gdpPercap)
+```
+<b>Bosnia had the lowest GDP per capita at 973.5332 </b>
 3. According to the data available, what was the average life expectancy across each continent in the 1980s?
 4. What 5 countries have the highest total GDP over all years combined?
 5. What countries and years had life expectancies of _at least_ 80 years? _N.b. only output the columns of interest: country, life expectancy and year (in that order)._
