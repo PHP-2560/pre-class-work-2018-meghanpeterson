@@ -39,10 +39,11 @@ summarise(countriespercontinent = n_distinct(country))
 
 ```{r}
 gapminder %>%
-filter(continent == 'Europe') %>%
+filter(continent == 'Europe' & year == 1997) %>%
 arrange(gdpPercap)
 ```
-<b>Bosnia had the lowest GDP per capita at 973.5332 </b>
+<b>Albania had the lowest GDP per capita at 3193.055 </b>
+
 3. According to the data available, what was the average life expectancy across each continent in the 1980s?
 4. What 5 countries have the highest total GDP over all years combined?
 5. What countries and years had life expectancies of _at least_ 80 years? _N.b. only output the columns of interest: country, life expectancy and year (in that order)._
