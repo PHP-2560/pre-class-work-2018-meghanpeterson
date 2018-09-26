@@ -118,7 +118,6 @@ Sweden	80.884	2007
 Switzerland	80.620	2002		
 Switzerland	81.701	2007		
 22 rows
-
 </b>
 
 6. What 10 countries have the strongest correlation (in either direction) between life expectancy and per capita GDP?
