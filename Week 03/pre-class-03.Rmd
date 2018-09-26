@@ -89,35 +89,36 @@ select(country, lifeExp, year)
 ```
 <b> Life expectancy was higher than 80 in the following 22 countries:
 
+
 country
 <fctr>
 lifeExp
 <dbl>
 year
 <int>
-Australia	80.370	2002		
-Australia	81.235	2007		
-Canada	80.653	2007		
-France	80.657	2007		
-Hong Kong, China	80.000	1997		
-Hong Kong, China	81.495	2002		
-Hong Kong, China	82.208	2007		
-Iceland	80.500	2002		
-Iceland	81.757	2007		
-Israel	80.745	2007		
-Italy	80.240	2002		
-Italy	80.546	2007		
-Japan	80.690	1997		
-Japan	82.000	2002		
-Japan	82.603	2007		
-New Zealand	80.204	2007		
-Norway	80.196	2007		
-Spain	80.941	2007		
-Sweden	80.040	2002		
-Sweden	80.884	2007		
-Switzerland	80.620	2002		
-Switzerland	81.701	2007		
-22 rows
+1) Australia	80.370	2002		
+2) Australia	81.235	2007		
+3) Canada	80.653	2007		
+4) France	80.657	2007	
+5) Hong Kong, China	80.000	1997		
+6) Hong Kong, China	81.495	2002		
+7) Hong Kong, China	82.208	2007		
+8) Iceland	80.500	2002		
+9) Iceland	81.757	2007		
+10) Israel	80.745	2007		
+11) Italy	80.240	2002		
+12) Italy	80.546	2007		
+13) Japan	80.690	1997		
+14) Japan	82.000	2002		
+15) Japan	82.603	2007		
+16) New Zealand	80.204	2007		
+17) Norway	80.196	2007		
+18) Spain	80.941	2007		
+19) Sweden	80.040	2002		
+20) Sweden	80.884	2007		
+21) Switzerland	80.620	2002		
+22) Switzerland	81.701	2007		
+
 </b>
 
 6. What 10 countries have the strongest correlation (in either direction) between life expectancy and per capita GDP?
