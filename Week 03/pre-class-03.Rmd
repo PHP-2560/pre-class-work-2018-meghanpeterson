@@ -54,13 +54,32 @@ gapminder %>%
 ```
 <b> The mean life expectancy was:
 
-Africa	56.00775			
-Americas	67.30333			
-Asia	62.84146			
+Africa	56.00775
+
+Americas	67.30333	
+
+Asia	62.84146		
+
 Europe	74.11400
+
 </b>
 
 4. What 5 countries have the highest total GDP over all years combined?
+
+```{r}
+gapminder %>%
+mutate(gdp = pop*gdpPercap) %>%
+arrange(desc(gdp)) %>% 
+distinct(country) 
+```
+
+<b>The five countries with the highest GDP over all years were 
+1) United States				
+2) China				
+3) Japan				
+4) India				
+5) Germany </b>
+
 5. What countries and years had life expectancies of _at least_ 80 years? _N.b. only output the columns of interest: country, life expectancy and year (in that order)._
 6. What 10 countries have the strongest correlation (in either direction) between life expectancy and per capita GDP?
 7. Which combinations of continent (besides Asia) and year have the highest average population across all countries? _N.b. your output should include all results sorted by highest average population_. With what you already know, this one may stump you. See [this Q&A](http://stackoverflow.com/q/27207963/654296) for how to `ungroup` before `arrange`ing. This also [behaves differently in more recent versions of dplyr](https://github.com/hadley/dplyr/releases/tag/v0.5.0).
