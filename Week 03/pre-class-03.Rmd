@@ -174,9 +174,33 @@ Australia	0.9864457
 ```{r}
 gapminder %>%
 filter(continent != "Asia") %>%
-arrange(pop, year)
-
+group_by(year, continent) %>%
+summarise(averagepopulation = mean(pop)) %>%
+arrange(desc(averagepopulation)) 
 ```
+<b> 
+
+Countries:
+
+year
+<int>
+continent
+<fctr>
+averagepopulation
+<dbl>
+2007	Americas	35954847		
+2002	Americas	33990910		
+1997	Americas	31876016		
+1992	Americas	29570964		
+1987	Americas	27310159		
+1982	Americas	25211637		
+1977	Americas	23122708		
+1972	Americas	21175368		
+2007	Europe	19536618	
+...
+</b>
+
+
 8. Which three countries have had the most consistent population estimates (i.e. lowest standard deviation) across the years of available data? 
 9. Subset **gm** to only include observations from 1992 and store the results as **gm1992**. What kind of object is this?
 10. Which observations indicate that the population of a country has *decreased* from the previous year **and** the life expectancy has *increased* from the previous year? See [the vignette on window functions](https://cran.r-project.org/web/packages/dplyr/vignettes/window-functions.html).
