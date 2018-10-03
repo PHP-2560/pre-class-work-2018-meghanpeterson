@@ -22,10 +22,11 @@ for(i in 1:50) {
 A.  Using a loop, add all the integers between 0 and 1000.
 
 ```{r}
-for(i in 0:1000) {
-  print(sum(i))
+x = 0
+for (i in 0:1000) {
+  x <- x + i
 }
-
+print(x)
 ```
 
 B. Now, add all the EVEN integers between 0 and 1000 (hint: use seq())
