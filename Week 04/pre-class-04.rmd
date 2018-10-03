@@ -31,6 +31,17 @@ print(x)
 
 B. Now, add all the EVEN integers between 0 and 1000 (hint: use seq())
 
+```{r}
+
+?seq
+
+x = 0
+for (i in seq(from = 0, to = 1000, by = 2)) {
+  x <- x + i
+}
+print(x)
+```
+
 C. Now, repeat A and B WITHOUT using a loop.
 
 ### Question 3:
