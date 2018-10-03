@@ -44,6 +44,15 @@ print(x)
 
 C. Now, repeat A and B WITHOUT using a loop.
 
+```{r}
+sum(0:1000)
+```
+
+```{r}
+sum(seq(from = 0, t = 1000, by = 2))
+
+```
+
 ### Question 3:
 
 Here is a dataframe of survey data containing 5 questions :
