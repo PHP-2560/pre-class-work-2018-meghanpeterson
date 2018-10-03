@@ -8,7 +8,14 @@ Make sure you commit this often with meaningful messages.
 
 ### Question 1:
 
-Using a loop, print the integers from 1 to 50. 
+Using a loop, print the integers from 1 to 50.
+
+```{r}
+for(i in 1:50) {
+  print(i)
+}
+
+```
 
 ### Question 2:
 
