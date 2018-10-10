@@ -135,8 +135,11 @@ A. Using a loop, calculate the mean weight of the subjects separated by the type
 ```{r}
 
 for(i in 1:length(wcgs)) {
+  j <- mean(weight)
+  group_by(type_chd)
+}
   
-
+```
 
 B. Now do the same thing, but now don’t use a loop
 
