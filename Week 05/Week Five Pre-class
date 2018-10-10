@@ -115,13 +115,28 @@ WCGS.new <- nums <- unlist(lapply(wcgs, is.numeric))
 
 ```
 C. Using a loop and your new function, standardize all the variables WCGS.new dataset.
+
+```{r}
+for(i in 1:length(WGS.new)) {
+  j <- standardize.me(i) 
+  print(j)
+}
+
+```
+
 D. What should the mean and standard deviation of all your new standardized variables be? Test your prediction by running a loop
 
-
+<b> the mean should be 0, the standard deviation should be 1 </b>
 
 
 ### Question 2: Looping to Calculate
 
 A. Using a loop, calculate the mean weight of the subjects separated by the type of CHD they have.
+```{r}
+
+for(i in 1:length(wcgs)) {
+  
+
+
 B. Now do the same thing, but now don’t use a loop
 
