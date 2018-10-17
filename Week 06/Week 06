@@ -44,11 +44,28 @@ f3 <- function(x, y) {
 
 2. Compare and contrast rnorm() and MASS::mvrnorm(). How could you make them more consistent?
 
-```{r}
-?rnorm
-```
+<b> mvrnorm is from the package MASS. It produces >= 1 samples from the specified multivariate normal distribution. rnorm is used to generate n normal random numbers with arguments mean and sd. You could make them more consistent by renaming them. 
+</b>
+
+
+
 
 3. Use `lapply()` and an anonymous function to find the coefficient of variation (the standard deviation divided by the mean) for all columns in the mtcars dataset. 
+
+```{r}
+
+?lapply
+
+coefficientofvariation <- function(x) {
+  coeffofvar <- sd(x) / mean(x)
+  return(coeffofvar)
+}
+ 
+lapply(mtcars, coefficientofvariation)
+ ```
+ 
+ 
+
 
 4. Use vapply() to:
     a. Compute the standard deviation of every column in a numeric data frame.
