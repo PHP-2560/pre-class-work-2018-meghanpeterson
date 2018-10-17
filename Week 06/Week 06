@@ -69,4 +69,16 @@ lapply(mtcars, coefficientofvariation)
 
 4. Use vapply() to:
     a. Compute the standard deviation of every column in a numeric data frame.
+    
+    
+```{r}
+    vapply(df, sd, numeric(1))
+```
+    
     b. Compute the standard deviation of every numeric column in a mixed data frame. (Hint: you’ll need to use vapply() twice.)
+
+```{r}
+vapply(df[vapply(df, is.numeric, logical(1))], sd, numeric(1))
+
+
+```
