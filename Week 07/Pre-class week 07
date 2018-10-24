@@ -1,0 +1,107 @@
+
+ 1. **Gambler's Ruin**: Suppose you have a bankroll of $1000 and make bets of $100 on a fair game. By simulating the outcome directly for at most 5000 iterations of the game (or hands), estimate:
+    a. the probability that you have "busted" (lost all your money) by the time you have placed your one hundredth bet. 
+
+```{r}
+
+#This is an example of a random walk
+randomwalk <- function (nn, upprob=0.5, start=NA) {
+output <- rep (NA, nn)
+output[1] <- start
+for (iteration in 2:nn) {
+output[iteration] <-
+output[iteration-1] + 2*rbinom(1, 1, upprob) - 1
+}
+output
+}
+
+randomwalk(nn=5000, start=1000)
+
+
+gamblersruinfunc <- function(bet, totalamount ,probability)
+{
+  hand=0
+  while(bet>0) {
+    ProbVal=runif(1)
+    if(ProbVal <= probability)
+    {
+      totalamount <- bet + totalamount
+      bet <- (bet + totalamount)*0.1
+    }else{
+      totalamount <- totalamount-bet
+      bet <- bet
+      }
+    hand <- hand+1
+    if(totalamount < bet){break}
+  }
+  duration <- hand
+  return(duration)
+}
+
+
+gamblersruinfunc(1000, 100, .5)
+
+a=length(durations)
+b=length(which(durations<=5000))
+prob=b/a
+prob
+
+
+````
+    
+    
+    b. the probability that you have busted by the time you have placed your five hundredth bet by simulating the outcome directly. 
+    
+```{r}
+
+gamblersruinfunc(1000, 500, .5)
+
+a=length(durations)
+b=length(which(durations<=5000))
+prob=b/a
+prob
+```
+    
+    
+    c. the mean time you go bust, given that you go bust within the first 5000 hands.
+  
+```{r}  
+
+a=durations[which(durations<=5000)]
+mean=mean(a)
+mean
+
+
+```
+    d. the mean and variance of your bankroll after 100 hands (including busts).
+    
+```{r}
+
+totalamount <- 1000
+bet <- 100
+
+mean(totalamount)
+a=durations[which(durations=100)]
+mean=mean(a)
+mean
+
+
+?var
+
+
+
+```
+
+    e. the mean and variance of your bankroll after 500 hands (including busts).
+ 
+Note: you *must* stop playing if your player has gone bust. How will you handle this in the `for` loop?
+
+By using a break. 
+
+
+2. **Markov Chains**. Suppose you have a game where the probability of winning on your first hand is 48%; each time you win, that probability goes up by one percentage point for the next game (to a maximum of 100%, where it must stay), and each time you lose, it goes back down to 48%. Assume you cannot go bust and that the size of your wager is a constant $100.
+
+
+    a. Is this a fair game? Simulate one hundred thousand sequential hands to determine the size of your return. Then repeat this simulation 99 more times to get a range of values to calculate the expectation.
+    b. Repeat this process but change the starting probability to a new value within 2% either way. Get the expected return after 100 repetitions. Keep exploring until you have a return value that is as fair as you can make it. Can you do this automatically?
+    c. Repeat again, keeping the initial probability at 48%, but this time change the probability increment to a value different from 1%. Get the expected return after 100 repetitions. Keep changing this value until you have a return value that is as fair as you can make it. 
