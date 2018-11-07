@@ -46,6 +46,9 @@ str(CNNmoney1)
 ```{r}
 page <- content(CNNmoney1, 'text')
 cat(page)
+
+html_node(CNNmoney, css = "Stock Sectors") %>%
+html_text()
 ```
 
 4. Extract all of the “3 Month % Change” values from the “Stock Sectors” table.
